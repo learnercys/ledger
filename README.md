@@ -70,6 +70,10 @@ flowchart LR
   gRPC-Web and plain HTTP/JSON (`curl` works), with server reflection for
   `grpcurl` and `buf curl`. Code is generated with `buf` (`make generate`)
   and committed.
+- **Telemetry:** OpenTelemetry RPC and query spans, with every request span
+  tagged with its tenant. Configured from `OTEL_*` variables and off when no
+  exporter is set. The [platform](https://github.com/learnercys/platform)
+  repo's Grafana shows them.
 - **Auth:** OIDC access tokens verified against Keycloak's JWKS. Each token
   must be for audience `ledger-api` and carry a `tenant_id` claim. Writes
   need scope `ledger.write`, reads `ledger.read`. Three demo clients:
@@ -177,8 +181,11 @@ docs/adr/            design decisions
   flows.
 - **Migrations tool** (goose / golang-migrate) and a separate owner role for
   migrations.
-- **Observability:** OpenTelemetry traces and metrics (lock wait time per
-  account is the one to alert on), and audit logs keyed by token subject.
+- **More observability.** Every RPC is already traced (`otelconnect`, tagged
+  with `tenant.id`), and so is every query (`otelpgx`), with
+  `rpc.server.call.duration` metrics by method and status. Next: lock wait
+  time per account (the metric to alert on for hot accounts) and audit logs
+  keyed by token subject.
 - **Outbox events** (`transaction.posted`) for downstream consumers. My
   [event-pipeline](https://github.com/learnercys/event-pipeline) project
   shows that pattern.
