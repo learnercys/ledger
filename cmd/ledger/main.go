@@ -13,11 +13,13 @@ import (
 
 	"connectrpc.com/connect"
 	"connectrpc.com/grpcreflect"
+	"connectrpc.com/otelconnect"
 
 	"github.com/learnercys/ledger/gen/ledger/v1/ledgerv1connect"
 	"github.com/learnercys/ledger/internal/auth"
 	"github.com/learnercys/ledger/internal/server"
 	"github.com/learnercys/ledger/internal/store"
+	"github.com/learnercys/ledger/internal/telemetry"
 )
 
 func main() {
@@ -31,6 +33,12 @@ func main() {
 func run(log *slog.Logger) error {
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
+
+	shutdown, err := telemetry.Setup(ctx, "ledger")
+	if err != nil {
+		return err
+	}
+	defer func() { _ = shutdown(context.Background()) }()
 
 	st, err := store.New(ctx, mustEnv("DATABASE_URL"))
 	if err != nil {
@@ -49,11 +57,18 @@ func run(log *slog.Logger) error {
 		RequiredScope: server.RequiredScopes,
 	}
 
+	// RPC spans and metrics (rpc.server.duration, …) for every call, including
+	// rejected ones.
+	otelInterceptor, err := otelconnect.NewInterceptor()
+	if err != nil {
+		return err
+	}
+
 	mux := http.NewServeMux()
 	mux.Handle(ledgerv1connect.NewLedgerServiceHandler(
 		&server.Server{Store: st, Log: log},
-		// Logging runs outermost so it also records rejected (unauthenticated) calls.
-		connect.WithInterceptors(server.LoggingInterceptor(log), authn.Interceptor()),
+		// Tracing and logging run outermost so they also cover rejected calls.
+		connect.WithInterceptors(otelInterceptor, server.LoggingInterceptor(log), authn.Interceptor()),
 	))
 	// Reflection lets grpcurl and Postman discover the API. It exposes the
 	// schema only; every RPC still requires a token.

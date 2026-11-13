@@ -11,6 +11,9 @@ import (
 	"time"
 
 	"connectrpc.com/connect"
+	"connectrpc.com/otelconnect"
+	sdktrace "go.opentelemetry.io/otel/sdk/trace"
+	"go.opentelemetry.io/otel/sdk/trace/tracetest"
 
 	ledgerv1 "github.com/learnercys/ledger/gen/ledger/v1"
 	"github.com/learnercys/ledger/gen/ledger/v1/ledgerv1connect"
@@ -153,5 +156,49 @@ func TestErrorMapping(t *testing.T) {
 				t.Errorf("internal details leaked to the caller: %q", ce.Message())
 			}
 		}
+	}
+}
+
+// Each RPC produces a server span that records which tenant made the call.
+func TestRPCSpanCarriesTenant(t *testing.T) {
+	rec := tracetest.NewSpanRecorder()
+	tp := sdktrace.NewTracerProvider(sdktrace.WithSpanProcessor(rec))
+	otelInterceptor, err := otelconnect.NewInterceptor(otelconnect.WithTracerProvider(tp))
+	if err != nil {
+		t.Fatal(err)
+	}
+	iss := authtest.NewIssuer(issuerURL)
+	authn := &auth.Authenticator{Verifier: iss.Verifier(), Audience: "ledger-api", RequiredScope: RequiredScopes}
+	mux := http.NewServeMux()
+	mux.Handle(ledgerv1connect.NewLedgerServiceHandler(
+		&Server{Store: &fakeStore{}, Log: slog.New(slog.NewTextHandler(io.Discard, nil))},
+		connect.WithInterceptors(otelInterceptor, authn.Interceptor())))
+	srv := httptest.NewServer(mux)
+	t.Cleanup(srv.Close)
+
+	token := iss.Token(with(full, func(c *authtest.Claims) { c.Tenant = "globex" }))
+	addToken := connect.UnaryInterceptorFunc(func(next connect.UnaryFunc) connect.UnaryFunc {
+		return func(ctx context.Context, req connect.AnyRequest) (connect.AnyResponse, error) {
+			req.Header().Set("Authorization", "Bearer "+token)
+			return next(ctx, req)
+		}
+	})
+	client := ledgerv1connect.NewLedgerServiceClient(srv.Client(), srv.URL, connect.WithInterceptors(addToken))
+	if _, err := client.GetAccount(context.Background(), &ledgerv1.GetAccountRequest{Id: "acct_1"}); err != nil {
+		t.Fatal(err)
+	}
+
+	spans := rec.Ended()
+	if len(spans) != 1 || spans[0].Name() != "ledger.v1.LedgerService/GetAccount" {
+		t.Fatalf("unexpected spans: %v", spans)
+	}
+	var tenant string
+	for _, a := range spans[0].Attributes() {
+		if a.Key == "tenant.id" {
+			tenant = a.Value.AsString()
+		}
+	}
+	if tenant != "globex" {
+		t.Fatalf("span tenant.id = %q, want globex", tenant)
 	}
 }

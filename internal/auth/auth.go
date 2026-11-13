@@ -15,6 +15,8 @@ import (
 
 	"connectrpc.com/connect"
 	"github.com/coreos/go-oidc/v3/oidc"
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/trace"
 )
 
 // Scopes understood by the API.
@@ -113,6 +115,9 @@ func (a *Authenticator) Interceptor() connect.UnaryInterceptorFunc {
 				return nil, connect.NewError(connect.CodePermissionDenied,
 					fmt.Errorf("%s requires scope %q", req.Spec().Procedure, scope))
 			}
+			// Every span of this request is now attributable to a tenant.
+			trace.SpanFromContext(ctx).SetAttributes(
+				attribute.String("tenant.id", p.Tenant), attribute.String("enduser.id", p.Subject))
 			return next(WithPrincipal(ctx, p), req)
 		}
 	}
