@@ -1,0 +1,49 @@
+# Local stack: Postgres, Keycloak (OIDC provider) and the ledger service.
+# Start with `make up`. Host ports use the 5xxxx range to avoid clashes.
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ledger
+      POSTGRES_PASSWORD: postgres
+    ports: ["55433:5432"]
+    volumes:
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "ledger"]
+      interval: 1s
+      retries: 30
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4
+    command: ["start-dev", "--import-realm", "--http-port=8080", "--health-enabled=true"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      # Tokens must carry the same issuer whether they were requested from the
+      # host (localhost:58180) or from inside the network (keycloak:8080).
+      KC_HOSTNAME: http://localhost:58180
+      KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
+    ports: ["58180:8080"]
+    volumes:
+      - ./deploy/keycloak:/opt/keycloak/data/import:ro
+    healthcheck:
+      # The image has no curl; use bash's /dev/tcp to hit the management port.
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/9000 && printf 'GET /health/ready HTTP/1.0\\r\\n\\r\\n' >&3 && grep -q UP <&3"]
+      interval: 2s
+      retries: 60
+
+  ledger:
+    build: .
+    image: ledger:local
+    restart: unless-stopped
+    ports: ["58090:8080"]
+    environment:
+      DATABASE_URL: postgres://ledger_app:ledger_app@postgres:5432/ledger?sslmode=disable
+      OIDC_ISSUER: http://localhost:58180/realms/ledger
+      OIDC_JWKS_URL: http://keycloak:8080/realms/ledger/protocol/openid-connect/certs
+      OIDC_AUDIENCE: ledger-api
+    depends_on:
+      postgres: { condition: service_healthy }
+      keycloak: { condition: service_healthy }

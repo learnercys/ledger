@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-and-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - name: lint
+        run: make lint
+      - name: generated code is up to date
+        run: |
+          make generate
+          git diff --exit-code -- gen
+      - name: unit tests
+        run: make test
+
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - name: postgres integration and property-based tests
+        run: make test-integration
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: start postgres, keycloak and the ledger
+        run: make up
+      - name: end-to-end demo with real tokens
+        run: make demo
+      - name: logs
+        if: failure()
+        run: docker compose logs --tail 200

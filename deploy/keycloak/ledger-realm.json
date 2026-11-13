@@ -1,0 +1,95 @@
+{
+  "realm": "ledger",
+  "enabled": true,
+  "accessTokenLifespan": 300,
+  "clientScopes": [
+    {
+      "name": "ledger.read",
+      "description": "Read accounts, balances and transactions",
+      "protocol": "openid-connect",
+      "attributes": { "include.in.token.scope": "true", "display.on.consent.screen": "false" }
+    },
+    {
+      "name": "ledger.write",
+      "description": "Open accounts and post or reverse transactions",
+      "protocol": "openid-connect",
+      "attributes": { "include.in.token.scope": "true", "display.on.consent.screen": "false" }
+    },
+    {
+      "name": "ledger-api-audience",
+      "description": "Adds ledger-api to the token audience",
+      "protocol": "openid-connect",
+      "attributes": { "include.in.token.scope": "false", "display.on.consent.screen": "false" },
+      "protocolMappers": [
+        {
+          "name": "audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": { "included.custom.audience": "ledger-api", "access.token.claim": "true", "id.token.claim": "false" }
+        }
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "acme-service",
+      "description": "Backend service for tenant acme (read + write)",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "acme-secret",
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "defaultClientScopes": ["ledger.read", "ledger.write", "ledger-api-audience"],
+      "optionalClientScopes": [],
+      "protocolMappers": [
+        {
+          "name": "tenant",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-hardcoded-claim-mapper",
+          "config": { "claim.name": "tenant_id", "claim.value": "acme", "jsonType.label": "String", "access.token.claim": "true" }
+        }
+      ]
+    },
+    {
+      "clientId": "acme-readonly",
+      "description": "Reporting service for tenant acme (read only)",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "acme-readonly-secret",
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "defaultClientScopes": ["ledger.read", "ledger-api-audience"],
+      "optionalClientScopes": [],
+      "protocolMappers": [
+        {
+          "name": "tenant",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-hardcoded-claim-mapper",
+          "config": { "claim.name": "tenant_id", "claim.value": "acme", "jsonType.label": "String", "access.token.claim": "true" }
+        }
+      ]
+    },
+    {
+      "clientId": "globex-service",
+      "description": "Backend service for tenant globex (read + write)",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "globex-secret",
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "defaultClientScopes": ["ledger.read", "ledger.write", "ledger-api-audience"],
+      "optionalClientScopes": [],
+      "protocolMappers": [
+        {
+          "name": "tenant",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-hardcoded-claim-mapper",
+          "config": { "claim.name": "tenant_id", "claim.value": "globex", "jsonType.label": "String", "access.token.claim": "true" }
+        }
+      ]
+    }
+  ]
+}

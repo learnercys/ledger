@@ -1,0 +1,697 @@
+# 2026/11/13 01:24:06.510501 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:06.510508 [TestLedgerProperties] nothing to reverse
+# 2026/11/13 01:24:06.510511 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:06.510514 [TestLedgerProperties] nothing to reverse
+# 2026/11/13 01:24:06.510515 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.510515 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.510517 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:06.515606 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.515608 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.515608 [TestLedgerProperties] not enough accounts
+# 2026/11/13 01:24:06.515610 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.515613 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.515613 [TestLedgerProperties] [rapid] draw neg: true
+# 2026/11/13 01:24:06.521494 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:06.521497 [TestLedgerProperties] nothing to reverse
+# 2026/11/13 01:24:06.521500 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.521500 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.521501 [TestLedgerProperties] [rapid] draw neg: true
+# 2026/11/13 01:24:06.528613 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.528615 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.528616 [TestLedgerProperties] not enough accounts
+# 2026/11/13 01:24:06.528622 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.528622 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.528623 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:06.537012 [TestLedgerProperties] [rapid] draw action: "transfer"
+# 2026/11/13 01:24:06.537014 [TestLedgerProperties] [rapid] draw from: "acct_01a1d3ca-cfe8-75b1-a9cf-9345e708ca61"
+# 2026/11/13 01:24:06.537015 [TestLedgerProperties] [rapid] draw to: "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6"
+# 2026/11/13 01:24:06.537016 [TestLedgerProperties] [rapid] draw amount: 2
+# 2026/11/13 01:24:06.545708 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.545709 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.545710 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:06.554794 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.554795 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.554795 [TestLedgerProperties] [rapid] draw neg: true
+# 2026/11/13 01:24:06.564878 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.564879 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.564882 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-cfe9-770c-adfc-0286fc57cf77", "acct_01a1d3ca-cfee-7d3e-b078-ddd59d39b71c", "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8", "acct_01a1d3ca-d012-70b3-9b44-f2083117a3e2", "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6", "acct_01a1d3ca-cfe8-75b1-a9cf-9345e708ca61", "acct_01a1d3ca-cff9-7d2f-a0a4-bbfef36655d0"}
+# 2026/11/13 01:24:06.564889 [TestLedgerProperties] [rapid] draw a: 9
+# 2026/11/13 01:24:06.564889 [TestLedgerProperties] [rapid] draw b: 3000
+# 2026/11/13 01:24:06.576657 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.576659 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.576659 [TestLedgerProperties] [rapid] draw neg: true
+# 2026/11/13 01:24:06.588705 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:06.588707 [TestLedgerProperties] [rapid] draw target: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f59f63da0), txn:(*ledgerv1.Transaction)(0x361f59d1d500)}
+# 2026/11/13 01:24:06.602077 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.602078 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.602078 [TestLedgerProperties] [rapid] draw neg: true
+# 2026/11/13 01:24:06.615297 [TestLedgerProperties] [rapid] draw action: "transfer"
+# 2026/11/13 01:24:06.615298 [TestLedgerProperties] [rapid] draw from: "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8"
+# 2026/11/13 01:24:06.615299 [TestLedgerProperties] [rapid] draw to: "acct_01a1d3ca-cfee-7d3e-b078-ddd59d39b71c"
+# 2026/11/13 01:24:06.615300 [TestLedgerProperties] [rapid] draw amount: 4083
+# 2026/11/13 01:24:06.630376 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.630377 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.630377 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:06.645025 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.645026 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.645028 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-d031-7173-a077-e91104b42011", "acct_01a1d3ca-d01b-724d-b3cf-30859a2f2f86", "acct_01a1d3ca-cfea-77ef-89e6-36bd813a32e7"}
+# 2026/11/13 01:24:06.645031 [TestLedgerProperties] [rapid] draw a: 1296
+# 2026/11/13 01:24:06.645031 [TestLedgerProperties] [rapid] draw b: 2034
+# 2026/11/13 01:24:06.660401 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.660403 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.660405 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-d01b-724d-b3cf-30859a2f2f86", "acct_01a1d3ca-cfea-77ef-89e6-36bd813a32e7", "acct_01a1d3ca-d031-7173-a077-e91104b42011"}
+# 2026/11/13 01:24:06.660407 [TestLedgerProperties] [rapid] draw a: 56
+# 2026/11/13 01:24:06.660409 [TestLedgerProperties] [rapid] draw b: 1
+# 2026/11/13 01:24:06.675883 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.675884 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.675884 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:06.691826 [TestLedgerProperties] [rapid] draw action: "retry"
+# 2026/11/13 01:24:06.691827 [TestLedgerProperties] [rapid] draw earlier: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f59a72000), txn:(*ledgerv1.Transaction)(0x361f59a64900)}
+# 2026/11/13 01:24:06.710160 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.710164 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.710165 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:06.727311 [TestLedgerProperties] [rapid] draw action: "transfer"
+# 2026/11/13 01:24:06.727312 [TestLedgerProperties] [rapid] draw from: "acct_01a1d3ca-d066-7cdc-9b74-7b3d3d660120"
+# 2026/11/13 01:24:06.727313 [TestLedgerProperties] [rapid] draw to: "acct_01a1d3ca-d094-74a7-85bd-046ee877f247"
+# 2026/11/13 01:24:06.727314 [TestLedgerProperties] [rapid] draw amount: 3
+# 2026/11/13 01:24:06.747195 [TestLedgerProperties] [rapid] draw action: "retry"
+# 2026/11/13 01:24:06.747199 [TestLedgerProperties] [rapid] draw earlier: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f59a72600), txn:(*ledgerv1.Transaction)(0x361f59a64c00)}
+# 2026/11/13 01:24:06.766696 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.766701 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.766705 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-d012-70b3-9b44-f2083117a3e2", "acct_01a1d3ca-d066-7cdc-9b74-7b3d3d660120", "acct_01a1d3ca-d04a-7799-9c52-6927c70c616c", "acct_01a1d3ca-d094-74a7-85bd-046ee877f247", "acct_01a1d3ca-cfe8-75b1-a9cf-9345e708ca61", "acct_01a1d3ca-cff9-7d2f-a0a4-bbfef36655d0", "acct_01a1d3ca-d0b6-79a8-a4cc-4030b1ae0793", "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6", "acct_01a1d3ca-cfe9-770c-adfc-0286fc57cf77", "acct_01a1d3ca-cfee-7d3e-b078-ddd59d39b71c", "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8"}
+# 2026/11/13 01:24:06.766712 [TestLedgerProperties] [rapid] draw a: 613
+# 2026/11/13 01:24:06.766713 [TestLedgerProperties] [rapid] draw b: 214
+# 2026/11/13 01:24:06.785945 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.785947 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.785949 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-d01b-724d-b3cf-30859a2f2f86", "acct_01a1d3ca-cfea-77ef-89e6-36bd813a32e7", "acct_01a1d3ca-d031-7173-a077-e91104b42011"}
+# 2026/11/13 01:24:06.785951 [TestLedgerProperties] [rapid] draw a: 2273
+# 2026/11/13 01:24:06.785952 [TestLedgerProperties] [rapid] draw b: 6
+# 2026/11/13 01:24:06.807285 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.807286 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.807289 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-d094-74a7-85bd-046ee877f247", "acct_01a1d3ca-cfee-7d3e-b078-ddd59d39b71c", "acct_01a1d3ca-d066-7cdc-9b74-7b3d3d660120", "acct_01a1d3ca-cfe8-75b1-a9cf-9345e708ca61", "acct_01a1d3ca-d04a-7799-9c52-6927c70c616c", "acct_01a1d3ca-d012-70b3-9b44-f2083117a3e2", "acct_01a1d3ca-cfe9-770c-adfc-0286fc57cf77", "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8", "acct_01a1d3ca-cff9-7d2f-a0a4-bbfef36655d0", "acct_01a1d3ca-d0b6-79a8-a4cc-4030b1ae0793", "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6"}
+# 2026/11/13 01:24:06.807294 [TestLedgerProperties] [rapid] draw a: 8
+# 2026/11/13 01:24:06.807295 [TestLedgerProperties] [rapid] draw b: 1757
+# 2026/11/13 01:24:06.826998 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:06.827000 [TestLedgerProperties] [rapid] draw target: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f599a9bc0), txn:(*ledgerv1.Transaction)(0x361f59d56080)}
+# 2026/11/13 01:24:06.846084 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.846086 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.846087 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:06.865340 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.865343 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.865349 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-cfee-7d3e-b078-ddd59d39b71c", "acct_01a1d3ca-d094-74a7-85bd-046ee877f247", "acct_01a1d3ca-d13e-77c8-83f2-52775b4bca75", "acct_01a1d3ca-d04a-7799-9c52-6927c70c616c", "acct_01a1d3ca-d012-70b3-9b44-f2083117a3e2", "acct_01a1d3ca-d0b6-79a8-a4cc-4030b1ae0793", "acct_01a1d3ca-cfe8-75b1-a9cf-9345e708ca61", "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8", "acct_01a1d3ca-cfe9-770c-adfc-0286fc57cf77", "acct_01a1d3ca-cff9-7d2f-a0a4-bbfef36655d0", "acct_01a1d3ca-d066-7cdc-9b74-7b3d3d660120", "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6"}
+# 2026/11/13 01:24:06.865359 [TestLedgerProperties] [rapid] draw a: 23
+# 2026/11/13 01:24:06.865360 [TestLedgerProperties] [rapid] draw b: 154
+# 2026/11/13 01:24:06.886614 [TestLedgerProperties] [rapid] draw action: "transfer"
+# 2026/11/13 01:24:06.886615 [TestLedgerProperties] [rapid] draw from: "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6"
+# 2026/11/13 01:24:06.886617 [TestLedgerProperties] [rapid] draw to: "acct_01a1d3ca-d13e-77c8-83f2-52775b4bca75"
+# 2026/11/13 01:24:06.886618 [TestLedgerProperties] [rapid] draw amount: 1409
+# 2026/11/13 01:24:06.906528 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:06.906534 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:06.906535 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-cfea-77ef-89e6-36bd813a32e7", "acct_01a1d3ca-d031-7173-a077-e91104b42011", "acct_01a1d3ca-d01b-724d-b3cf-30859a2f2f86"}
+# 2026/11/13 01:24:06.906537 [TestLedgerProperties] [rapid] draw a: 3
+# 2026/11/13 01:24:06.906538 [TestLedgerProperties] [rapid] draw b: 2
+# 2026/11/13 01:24:06.926796 [TestLedgerProperties] [rapid] draw action: "transfer"
+# 2026/11/13 01:24:06.926798 [TestLedgerProperties] [rapid] draw from: "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8"
+# 2026/11/13 01:24:06.926800 [TestLedgerProperties] [rapid] draw to: "acct_01a1d3ca-cfea-77ef-89e6-36bd813a32e7"
+# 2026/11/13 01:24:06.926801 [TestLedgerProperties] [rapid] draw amount: 3086
+# 2026/11/13 01:24:06.945476 [TestLedgerProperties] [rapid] draw action: "retry"
+# 2026/11/13 01:24:06.945477 [TestLedgerProperties] [rapid] draw earlier: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f599c0f60), txn:(*ledgerv1.Transaction)(0x361f59aa4e80)}
+# 2026/11/13 01:24:06.966284 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:06.966289 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:06.966290 [TestLedgerProperties] [rapid] draw neg: true
+# 2026/11/13 01:24:06.986337 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:06.986338 [TestLedgerProperties] [rapid] draw target: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f599c0f60), txn:(*ledgerv1.Transaction)(0x361f59aa4e80)}
+# 2026/11/13 01:24:07.007901 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:07.007902 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:07.007905 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-d012-70b3-9b44-f2083117a3e2", "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6", "acct_01a1d3ca-d0b6-79a8-a4cc-4030b1ae0793", "acct_01a1d3ca-d066-7cdc-9b74-7b3d3d660120", "acct_01a1d3ca-d13e-77c8-83f2-52775b4bca75", "acct_01a1d3ca-d04a-7799-9c52-6927c70c616c", "acct_01a1d3ca-cff9-7d2f-a0a4-bbfef36655d0", "acct_01a1d3ca-cfee-7d3e-b078-ddd59d39b71c", "acct_01a1d3ca-d094-74a7-85bd-046ee877f247", "acct_01a1d3ca-d1b6-7ab6-af6b-ec00072f4036", "acct_01a1d3ca-cfe8-75b1-a9cf-9345e708ca61", "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8", "acct_01a1d3ca-cfe9-770c-adfc-0286fc57cf77"}
+# 2026/11/13 01:24:07.007911 [TestLedgerProperties] [rapid] draw a: 4
+# 2026/11/13 01:24:07.007911 [TestLedgerProperties] [rapid] draw b: 1
+# 2026/11/13 01:24:07.029843 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:07.029846 [TestLedgerProperties] [rapid] draw target: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f59a72600), txn:(*ledgerv1.Transaction)(0x361f59a64c00)}
+# 2026/11/13 01:24:07.051593 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:07.051594 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:07.051596 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-d031-7173-a077-e91104b42011", "acct_01a1d3ca-d01b-724d-b3cf-30859a2f2f86", "acct_01a1d3ca-cfea-77ef-89e6-36bd813a32e7"}
+# 2026/11/13 01:24:07.051599 [TestLedgerProperties] [rapid] draw a: 3
+# 2026/11/13 01:24:07.051599 [TestLedgerProperties] [rapid] draw b: 3
+# 2026/11/13 01:24:07.072691 [TestLedgerProperties] [rapid] draw action: "reverse"
+# 2026/11/13 01:24:07.072692 [TestLedgerProperties] [rapid] draw target: store.posted{req:(*ledgerv1.PostTransactionRequest)(0x361f599c1560), txn:(*ledgerv1.Transaction)(0x361f59aa5380)}
+# 2026/11/13 01:24:07.094435 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:07.094437 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:07.094438 [TestLedgerProperties] [rapid] draw neg: false
+# 2026/11/13 01:24:07.115863 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:07.115864 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:07.115866 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-cfe8-75b1-a9cf-9345e708ca61", "acct_01a1d3ca-d236-7cf0-a2c1-d5ecab2d7685", "acct_01a1d3ca-d094-74a7-85bd-046ee877f247", "acct_01a1d3ca-d001-703e-b302-1eb53d1974c8", "acct_01a1d3ca-cff9-7d2f-a0a4-bbfef36655d0", "acct_01a1d3ca-cff3-7f03-aae9-e31ac057a9a6", "acct_01a1d3ca-cfee-7d3e-b078-ddd59d39b71c", "acct_01a1d3ca-d066-7cdc-9b74-7b3d3d660120", "acct_01a1d3ca-cfe9-770c-adfc-0286fc57cf77", "acct_01a1d3ca-d012-70b3-9b44-f2083117a3e2", "acct_01a1d3ca-d04a-7799-9c52-6927c70c616c", "acct_01a1d3ca-d0b6-79a8-a4cc-4030b1ae0793", "acct_01a1d3ca-d1b6-7ab6-af6b-ec00072f4036", "acct_01a1d3ca-d13e-77c8-83f2-52775b4bca75"}
+# 2026/11/13 01:24:07.115871 [TestLedgerProperties] [rapid] draw a: 2
+# 2026/11/13 01:24:07.115871 [TestLedgerProperties] [rapid] draw b: 6
+# 2026/11/13 01:24:07.137917 [TestLedgerProperties] [rapid] draw action: "open"
+# 2026/11/13 01:24:07.137918 [TestLedgerProperties] [rapid] draw cur: "USD"
+# 2026/11/13 01:24:07.137919 [TestLedgerProperties] [rapid] draw neg: true
+# 2026/11/13 01:24:07.159521 [TestLedgerProperties] [rapid] draw action: "multileg"
+# 2026/11/13 01:24:07.159522 [TestLedgerProperties] [rapid] draw cur: "EUR"
+# 2026/11/13 01:24:07.159524 [TestLedgerProperties] [rapid] draw order: []string{"acct_01a1d3ca-cfea-77ef-89e6-36bd813a32e7", "acct_01a1d3ca-d01b-724d-b3cf-30859a2f2f86", "acct_01a1d3ca-d031-7173-a077-e91104b42011"}
+# 2026/11/13 01:24:07.159526 [TestLedgerProperties] [rapid] draw a: 20
+# 2026/11/13 01:24:07.159527 [TestLedgerProperties] [rapid] draw b: 928
+# 2026/11/13 01:24:07.183270 [TestLedgerProperties] [rapid] draw action: "retry"
+# 2026/11/13 01:24:07.183271 [TestLedgerProperties] [rapid] draw earlier: store.posted{req:(*ledgerv1.PostTransactionRequest)(nil), txn:(*ledgerv1.Transaction)(0x361f59a61480)}
+# 2026/11/13 01:24:07.183273 [TestLedgerProperties] retry of txn_01a1d3ca-d03d-7ea9-a641-68abcb4523fe returned , invalid request: a transaction needs at least 2 postings
+# 
+v0.4.8#10524202453889689891
+0xf69b10311b4c3
+0x1a2eb4c957a122
+0x5
+0x7
+0x3
+0x188543b8cf8db6
+0x3
+0x1284c11f8926
+0x1
+0x15128499655ee6
+0x0
+0x0
+0x1676cd14c212c1
+0x17e1a986cd9770
+0x0
+0xad7f3b4ed09df
+0x1
+0x7c5fc9c7320df
+0x513d99969fc8e
+0x1
+0x628e3b17a194e
+0x0
+0x1
+0x17095b17e27f57
+0x1d7a2e84d3cbed
+0x7
+0x5
+0x3
+0x165950770bb0a4
+0x1
+0x136ace63f235a5
+0x0
+0x1
+0xef18cbfbec0a5
+0x144937f6c84dbb
+0x6
+0x0
+0x9959f0b49d345
+0x1
+0x1dc30aa342b809
+0x3b7cd3c9a8c58
+0x1
+0x1bc0205bfb8667
+0x0
+0x0
+0x981838beb7c65
+0x6fd00badb6222
+0x4
+0x166de1f41e6676
+0x7
+0x0
+0xe8cfa517ba73d
+0x4
+0x427d320bfb284
+0x1bd590788d19d
+0x1
+0x1cb5c14b9be962
+0x1d51741c85ecfb
+0x1
+0x1ae3658b315892
+0x0
+0x0
+0x15da467d93f19c
+0x239154050709a
+0x1
+0x1d2544c35e3f1d
+0x1
+0x1
+0x131ee25e698975
+0x2d39ecf12d441
+0x0
+0x11a35d57ba12ef
+0x0
+0x1e24fdcfb54942
+0x1
+0xe8cf8e3cf7a87
+0x1
+0x8a89f4d48be14
+0x3
+0x1b8f3a01ea75d
+0x3
+0x1eac8f1febc432
+0x3
+0x3
+0x2
+0x164a87bc8ca3b1
+0x0
+0x179ea4f9e7a7e9
+0x1d0de93be2d22b
+0x9b1bd8235ed89
+0x8
+0x1b10880e87ba9f
+0x1f8b981ae24005
+0xffffffffffffffff
+0x1d3043a6b92ab7
+0x11fc2c37e17927
+0x7
+0x1
+0xb744517d5a473
+0x1
+0x1
+0x494a8dbb7af6c
+0x4891df43b1ece
+0x3
+0x1cad72488a940
+0x0
+0x1bbdbfe8b1fa04
+0x12960735c12c67
+0x1
+0x1d48ecf5dcb685
+0x0
+0x1
+0xcf02a94db3d24
+0x136ecbb8ae0873
+0x6
+0x6
+0x4
+0x1b6f16bd372733
+0xd
+0x6
+0xd29e8f6d6d0cf
+0x3
+0x1f12c4ec4edf66
+0x1d2475101dd10c
+0x175f
+0xff2
+0x165613fbbc0c70
+0x15180585079ea1
+0x1
+0xab745fccce7
+0x0
+0x0
+0x1dc6e622dd2ffe
+0x4e7fab31b25ad
+0x0
+0x96a103e04fc4d
+0x1
+0xa94c816b23b24
+0x2
+0x18395a47f554ae
+0x0
+0x1754a8953a4adb
+0x4dff7fcf2d9fe
+0x1a74060510b729
+0x50f
+0x42923b4c93e8b
+0x1874e43401ed5b
+0x7f1
+0x79ef1333e93be
+0x24deeeadddc01
+0x0
+0x4c2759af5de1f
+0x1
+0x1f930b23ae1b99
+0x1
+0x1f70ba2a5a4359
+0x0
+0x10f94185e72bdd
+0x9cf2f7e3025df
+0xf89bd2ccfdef4
+0x37
+0x899b15d54d04a
+0xb0ae30883367
+0x0
+0xd3bde20d64261
+0x1cc6f34d23e355
+0x5
+0x1
+0x9124d2d45253e
+0x0
+0x0
+0x1d87c92f01a992
+0x16485b005a1114
+0x2
+0x12803d3000687c
+0x2
+0x130bae691a2b2a
+0x15edbf5680e124
+0x1
+0x1e786d12b88deb
+0x0
+0x0
+0x1340c93ba4cb05
+0x12c5f2cdd7cd82
+0x6
+0x4
+0x14cee83ab11d2b
+0xb
+0x9fa7b502fe574
+0xc
+0xf162a80424b7d
+0xbb4bb3912f223
+0x2
+0x2f10ec5ea6fe0
+0x1099677fbe83da
+0x2
+0xa04e5b32b3ff3
+0x3
+0x1cf518014f6d00
+0x18606f366672a2
+0x6
+0x0
+0x1e651c26d5b419
+0x0
+0x10e59a50e0e824
+0x6
+0xaf6f31f711b04
+0x7
+0x67eb4da594a66
+0xd
+0xc
+0xc
+0xa
+0x5
+0x5b6e14635f358
+0x6
+0xc8314adb5d8c0
+0x2
+0x104afda21a89b3
+0x1
+0xdaabe01aca9b0
+0x4
+0x1f8db5866e0b14
+0x2
+0x61090ae262b8
+0x0
+0x11a1c5e1814817
+0x0
+0x891019c6e6138
+0x1c23297b6ce863
+0x1ad9f93fcbc062
+0x264
+0x2bb7e989f667d
+0x13f862051fc140
+0xd5
+0x1eea1c68e27d6d
+0x109c4db0f8f983
+0x5
+0x0
+0x193570a0f1d455
+0x1
+0x558880fe91825
+0x1
+0x162b8f241113ff
+0x0
+0xf44d4ae5e3a67
+0x8b5d77564212
+0x1e8d546462e62e
+0x8e0
+0xbeca337b2f9b3
+0x85c1b95da5a2f
+0x5
+0x13c5cf2802cb5c
+0x1ec09b46a4f2af
+0x0
+0x11e2af480efb31
+0x0
+0x1186c97f983246
+0x9
+0x10bc7ebaa271b3
+0xc
+0x1
+0x38efb23afd82f
+0xf
+0xb
+0xb
+0x6
+0x114d3595b17cc5
+0x6
+0x8515d7d567e70
+0x7
+0x7
+0x3
+0xdf4f7d32186e5
+0x1
+0x1d96f6b925a182
+0x2
+0xb029fa46c5128
+0x1
+0x1b25cf4e9c4e73
+0x0
+0x13176632aa64dc
+0x1
+0x19a032c1debaa3
+0x12710a6af57e41
+0xa9e76dc3e0785
+0x7
+0x3de11665cb853
+0x17b8bbf0105a1a
+0x6dc
+0x13f9c5a93ba6f
+0x3fa60bd9086ce
+0x3
+0xb87d7e538c7ad
+0x6
+0x4
+0xcc3c74e292ba1
+0x1603ac0e13a48d
+0x1
+0x14b3f73052ce2a
+0x0
+0x0
+0xfd64d78eb38da
+0x1de8231034533
+0x0
+0x7eb71b1502162
+0x0
+0x2ec6380ae5f7a
+0x2
+0xe03bd8c0493bf
+0xb
+0x8
+0x85f24049c3ea4
+0xb
+0x9
+0xe0c5c5c988f37
+0x4
+0x80ec3437bb5dd
+0x2
+0x6057d4c19f90
+0x5
+0xb4acae310cf53
+0x6
+0x5
+0x11e5a1e94ddef8
+0x3
+0x11fc57ce5e385e
+0x1
+0x16cfafde30ab5e
+0x2
+0x31ab1916ea32c
+0x1
+0x79d5f3a06a19f
+0x6d9dd61e3afe0
+0xba6c72c529983
+0x16
+0x888cff7a43132
+0x114534508fbbc0
+0x99
+0x94d3cfad7b637
+0x116b381a4b3969
+0x7
+0x4
+0x8e1075625896f
+0x4
+0x1f8c098eae249e
+0xffffffffffffffff
+0xef519bf0bfce0
+0x166027e61139b2
+0x580
+0xe6e2d5141b844
+0x12455e17a02aaf
+0x0
+0x35ee0a330ee5
+0x1
+0x12f2598cd26cb8
+0x0
+0x16406627e578b8
+0x1
+0x27b26f82f7cfd
+0x10dcfa106faa65
+0xc6b2f09f73f98
+0x2
+0x1cc2968349f5ea
+0x61754a444c7b5
+0x1
+0xf1db3e0f80bf5
+0xee59c3322becb
+0x4
+0x1d4b8fb33cb998
+0x6
+0x77cb3603cdf2e
+0x2
+0x17377200fdd8a7
+0x1a546f3870aad9
+0xc0d
+0xafa138d07fe12
+0xffa3466d50b2b
+0x2
+0x15fc921291a667
+0x6
+0x3af869c8289ad
+0x5785d325d92a
+0x1
+0x16ef92b12e9cdd
+0x0
+0x1
+0x1919dd2c3203f2
+0x11a5aa18df67a6
+0x3
+0x1dc207aa3f4250
+0x6
+0x5e876eaf59b3b
+0x1f97c2a90375f
+0x0
+0x10fe14a66eccab
+0x0
+0x120e8402e6739c
+0x6
+0x66efeae3c941c
+0x2
+0x1c7fed05991e45
+0x8
+0x16b5bde38af485
+0x5
+0x3285bd64295e3
+0xe
+0x7
+0x177fa30d7466f8
+0x2
+0xf538c30b54056
+0x5
+0xa953755531fb1
+0x3
+0x1355fd4e00afe
+0x1
+0xa5e68bf8c1a37
+0x3
+0x120d03b7359dcf
+0x3
+0x1
+0x1f10172ee8bed5
+0x0
+0x86eb774b89a72
+0x698c6612191d6
+0x3eb10f550f8db
+0x3
+0x1c7426f3daccc8
+0x52b6b580396d9
+0x0
+0xe0e0588b9fa45
+0x1d5a3c79d5f824
+0x3
+0x1dc5415871c7f3
+0xd
+0x3
+0x111d170f34a04
+0xc993ac60a8e2c
+0x7
+0x0
+0x11b5fce38bf1f3
+0x1
+0xd5843338d4a58
+0x3
+0x3
+0x2
+0x1115b80287663f
+0x0
+0x142373030bb8aa
+0x1f2cfe0e12cbb0
+0x53bfc47ce729a
+0x2
+0x1eac1cc1593d74
+0x7aec618437d30
+0x2
+0x1066433ddbdc04
+0x1e1b02f67a96e3
+0x3
+0x1d77560bb347cc
+0xe
+0x7
+0x1dc3e27dc1ff59
+0x1050f505eb554f
+0x1
+0x1b0521d20e2ae4
+0x0
+0x0
+0xb8808954c0e1d
+0x1c723380b93ea3
+0x0
+0x9f448bc497fba
+0x0
+0x2ef346a781713
+0x0
+0x1e7e377404e23c
+0xc
+0xa57f87039028c
+0x7
+0x1ad13734a96dd0
+0x2
+0x1f20626749c4b9
+0xf
+0xe
+0x0
+0x61a01d71caab2
+0xa
+0x0
+0x7bb836a852245
+0x3
+0x1d795a21344d22
+0x7
+0x1
+0x1e8d3cebfb436f
+0x5
+0x1f493b88dbe381
+0x6
+0x0
+0xb96ecca0a2b06
+0x3
+0x15c0efb022aa87
+0x2
+0x6d9f48dc17de4
+0x0
+0x74658fd65ea21
+0x1e4444c2f84b0e
+0x322e818df9c02
+0x1
+0x1b09cc379a610b
+0x11a1f54b94adb0
+0x5
+0x18718644922881
+0x1be0686324ae2a
+0x1
+0x1d1acb8a44f1dd
+0x0
+0x1
+0x6cd811d129b29
+0x7f8bb0069f74f
+0x7
+0x0
+0x135a5b286fd472
+0x1
+0x6e99bf98b4522
+0x0
+0x18f9ce28bc1987
+0x0
+0x122cff605ed7c
+0xddd010d9da0a9
+0xc12c445c95150
+0x13
+0x80e6273e948e0
+0x18a66c89cb9c12
+0x39f
+0xdfc05d9347cef
+0xc3b63e1d6e041
+0x7
+0x2
+0xafb67143e483b
+0x1

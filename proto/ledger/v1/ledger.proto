@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package ledger.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/learnercys/ledger/gen/ledger/v1;ledgerv1";
+
+// LedgerService is a multi-tenant double-entry ledger.
+//
+// The caller's tenant comes from the access token, never from the request,
+// so one tenant can't name another tenant's accounts.
+//
+// Amounts are integers in the currency's minor unit (cents for USD).
+service LedgerService {
+  // CreateAccount opens an account. Requires the ledger.write scope.
+  rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {}
+
+  // GetAccount returns an account with its current balance.
+  rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+
+  // ListAccounts pages through the tenant's accounts.
+  rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+
+  // PostTransaction atomically applies a set of postings that sum to zero per
+  // currency. Retrying with the same idempotency_key returns the original
+  // result instead of posting twice. Requires the ledger.write scope.
+  rpc PostTransaction(PostTransactionRequest) returns (PostTransactionResponse) {}
+
+  // GetTransaction returns a transaction and its postings.
+  rpc GetTransaction(GetTransactionRequest) returns (GetTransactionResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+
+  // ReverseTransaction posts the exact opposite of a transaction. History is
+  // never edited; a transaction can be reversed only once.
+  rpc ReverseTransaction(ReverseTransactionRequest) returns (ReverseTransactionResponse) {}
+
+  // ListEntries returns an account's postings, newest first, each with the
+  // balance right after it (an account statement).
+  rpc ListEntries(ListEntriesRequest) returns (ListEntriesResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+}
+
+message Account {
+  string id = 1;
+  string name = 2;
+  string currency = 3;            // ISO 4217, e.g. "USD"
+  bool allow_negative = 4;        // true for funding/external accounts
+  int64 balance = 5;
+  int64 version = 6;              // increases by one with every posting
+  google.protobuf.Timestamp created_at = 7;
+}
+
+message CreateAccountRequest {
+  string idempotency_key = 1;
+  string name = 2;
+  string currency = 3;
+  bool allow_negative = 4;
+}
+
+message GetAccountRequest {
+  string id = 1;
+}
+
+message ListAccountsRequest {
+  int32 page_size = 1;            // default 50, max 200
+  string page_token = 2;
+}
+
+message ListAccountsResponse {
+  repeated Account accounts = 1;
+  string next_page_token = 2;
+}
+
+message Posting {
+  string account_id = 1;
+  int64 amount = 2;               // positive adds to the balance, negative subtracts
+  // Output only:
+  string currency = 3;
+  int64 balance_after = 4;
+  int64 account_version = 5;
+}
+
+message Transaction {
+  string id = 1;
+  string description = 2;
+  repeated Posting postings = 3;
+  string reverses_id = 4;         // set when this transaction is a reversal
+  google.protobuf.Timestamp created_at = 5;
+}
+
+message PostTransactionRequest {
+  string idempotency_key = 1;     // required
+  string description = 2;
+  repeated Posting postings = 3;  // at least 2; only account_id and amount are read
+}
+
+message GetTransactionRequest {
+  string id = 1;
+}
+
+message ReverseTransactionRequest {
+  string idempotency_key = 1;     // required
+  string transaction_id = 2;
+  string description = 3;
+}
+
+message ListEntriesRequest {
+  string account_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message Entry {
+  string transaction_id = 1;
+  int64 amount = 2;
+  int64 balance_after = 3;
+  int64 account_version = 4;
+  string description = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+message ListEntriesResponse {
+  repeated Entry entries = 1;
+  string next_page_token = 2;
+}
+
+message CreateAccountResponse {
+  Account account = 1;
+}
+
+message GetAccountResponse {
+  Account account = 1;
+}
+
+message PostTransactionResponse {
+  Transaction transaction = 1;
+}
+
+message GetTransactionResponse {
+  Transaction transaction = 1;
+}
+
+message ReverseTransactionResponse {
+  Transaction transaction = 1;
+}
